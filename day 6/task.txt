@@ -1,0 +1,12 @@
+task (multiple booking platform)
+-> Ridebooking, food delivery, parcel delivery 
+req
+all users share commo details but eac services has specialised user 
+user(name,phn no, loc) displayInfo()
+rideuser(vehicle type) food user(fav food) parcel(weight)
+
+leetcode
+3232 1470 189
+
+hw
+1678 796 709 520

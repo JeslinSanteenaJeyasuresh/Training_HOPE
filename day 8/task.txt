@@ -1,0 +1,6 @@
+wave form pattern
+i/p -> viratkohli
+o/p -> vrtoliakhi
+
+leetcode
+6 13 15 18 38

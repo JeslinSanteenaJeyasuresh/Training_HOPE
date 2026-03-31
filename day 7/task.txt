@@ -1,0 +1,11 @@
+task: mini game
+game have 3 characters - warrior, archer, mage
+all character have attack
+warrior -> attack with sword
+archer -> attack with sword
+archer -> attack with arrow
+mage -> attack with magic
+oe common refreence (name)
+
+leetcode
+11 724 54

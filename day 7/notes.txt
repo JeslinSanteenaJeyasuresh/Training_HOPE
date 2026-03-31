@@ -1,0 +1,10 @@
+polymorphism 
+poly -> many
+morph -> forms
+polymorphism -> one thing existing in different forms
+in coding -> one method extisting in diff behaviours 
+two types
+*compile time polymorphism -> method overloading
+                        -> same name different parameters
+*run time polymorphism -> method overrinding
+                        -> same ame same parameters but in different classes

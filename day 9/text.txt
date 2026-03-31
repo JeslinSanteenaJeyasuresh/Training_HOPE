@@ -1,0 +1,37 @@
+abstraction -> hiding internal implematation nd shows nly essential 
+interface -> 100% abstraction 
+           -> always public + abstract method 
+
+we can achieve multiple inheritance nly through interface 
+one child class with multiple behaviour 
+no ambigity / no method body on parent class 
+override method without conflict 
+
+inheritance -> Is a relationship 
+abstraction -> has - a relationship
+BMW <- car -> Audi
+
+car is a engine 
+car has a engine
+
+engine e = new engine
+
+onj created inside another obj
+
+composition ,aggreatio
+
+-> composition -> tighly coupled - > if car is destoryed then car will also be destoryed 
+-> aggreation -> weakly coupled
+
+coupling -> how much one class depends on another class
+cohesion -> how much responsibilites of class
+-> high -> low
+
+task 
+smart home automation system
+-> if motion is detected -> light on
+-> if temp > 30'C -> turn on AC 
+-> at 7pm -> light on
+it should suport 
+-> multiple types of device 
+-> eay addition of new devices and rules in future
