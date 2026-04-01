@@ -1,0 +1,26 @@
+exception handling:the event which disturb the normal flow of programming
+
+java.lang.object is the package in which throwable exist, then inside throwable there are error and  exception
+ 
+ types of errors:
+ 1.stack overflow error
+ 2.outofmemory error
+ 3.virtual machine errror
+
+ types of exception:
+ 1.checked exception (compile time):
+  ex: file not found and IO exception
+
+ 2.unchecked exception(runtime exception)
+  ex:array out of bound,arithmetic exception,null pointer 
+
+Difference between error and exception
+
+error:developer can handle
+exception:developer cant handle
+
+try:execute the risky part of the code
+catch:work when risky part of code fails(multiple catch statements can be used in a program too)
+finally:always execute at the last
+throw:used to manually create an exception
+throws:class might give an exception
