@@ -1,0 +1,38 @@
+Encapsulation
+-> binding data and method that use the data in the class 
+-> controlling the access of the data 
+
+declaring private data members
+public methods c/a getters and setters
+
+class+method -> class
+
+task
+design a locker system where user can store items secureky 
+each locker protects its ihnternal data and only controlled operation 
+
+req 
+1. each loker hsd locker if,idLocker(boolean)
+
+operations
+-> store item(items,pin)
+-> retrieve item(pin)
+-> lock()
+
+task 2
+design documentation editior where user create differt tyoe of documentation like textdoc imagedoc spreadsheetdoc
+
+req 
+-> each document should
+  -. open
+  -> save 
+  -> close
+-> different document types behaves differntly
+    -> text -> shows text content
+    -> image -> renders images
+    -> spreadsheet - > calculates cells
+
+rules 
+-> user should not know internal logic  -> abbstraction
+-> documents data must be protected
+-> system should allow adding new document types
