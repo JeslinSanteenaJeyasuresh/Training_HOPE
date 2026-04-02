@@ -1,0 +1,218 @@
+Wrapper class:
+object represnetation of primitive datatype
+
+Primitive datatype  Object represnetation
+int               ->Integer
+char              ->Character
+bool              ->Boolean
+float             ->Float
+byte              ->Byte
+long              ->Long
+double            ->Double
+
+Wrapper class is present in java.lang package
+
+Initialization of wrapper class:
+
+Integer b=Integer.valueOf(10);
+                           |
+                          stored in heap
+Integer range from -127 to 127 
+Autoboxing = automatic conversion of primitive → wrapper object
+Unboxing = automatic conversion of wrapper object → primitive
+
+packages-> organizes the class and interface into a hierarchial structure,folder of classes
+
+types of packages:
+1.built-in package
+2.user defined packages-> reverse domaining names
+
+# 📘 JAVA WRAPPER CLASSES, AUTOBOXING & UNBOXING - NOTES
+
+---
+
+## 🔹 1. Wrapper Classes
+
+Wrapper classes are used to convert primitive data types into objects.
+
+| Primitive | Wrapper Class |
+| --------- | ------------- |
+| int       | Integer       |
+| char      | Character     |
+| double    | Double        |
+| boolean   | Boolean       |
+
+👉 Example:
+Integer b = 10;  // Wrapper object
+
+---
+
+## 🔹 2. Primitive vs Object
+
+### ✅ Primitive
+
+* Stored in STACK
+* Fast
+* No methods
+
+Example:
+int a = 10;
+
+---
+
+### ✅ Object (Wrapper)
+
+* Stored in HEAP
+* Uses reference (stored in stack)
+* Has methods (intValue(), equals())
+
+Example:
+Integer b = 10;
+
+---
+
+## 🔹 3. valueOf() vs parseInt()
+
+### ✅ valueOf()
+
+* Converts String → Integer object
+
+Example:
+Integer b = Integer.valueOf("123");
+
+---
+
+### ✅ parseInt()
+
+* Converts String → int (primitive)
+
+Example:
+int a = Integer.parseInt("123");
+
+👉 If assigned to Integer:
+Integer c = Integer.parseInt("123"); // autoboxing happens
+
+---
+
+## 🔹 4. Autoboxing
+
+👉 Automatic conversion:
+Primitive → Wrapper Object
+
+Example:
+int a = 10;
+Integer b = a;  // autoboxing
+
+Internally:
+Integer b = Integer.valueOf(a);
+
+---
+
+## 🔹 5. Unboxing
+
+👉 Automatic conversion:
+Wrapper Object → Primitive
+
+Example:
+Integer b = 10;
+int a = b;  // unboxing
+
+Internally:
+int a = b.intValue();
+
+---
+
+## 🔹 6. Integer Caching (-128 to 127)
+
+Java caches Integer objects between:
+-128 to 127
+
+### ✅ Within range:
+
+Integer a = 100;
+Integer b = 100;
+
+👉 Both refer to SAME object
+👉 a == b → true
+
+---
+
+### ❌ Outside range:
+
+Integer a = 128;
+Integer b = 128;
+
+👉 Different objects
+👉 a == b → false
+
+---
+
+## 🔹 7. == vs equals()
+
+### ✅ ==
+
+* Compares reference (memory address)
+
+Example:
+Integer x = 128;
+Integer y = 128;
+
+x == y → false
+
+---
+
+### ✅ equals()
+
+* Compares actual value
+
+Example:
+x.equals(y) → true
+
+---
+
+## 🔹 8. Key Differences
+
+| Concept    | Meaning           |
+| ---------- | ----------------- |
+| Autoboxing | int → Integer     |
+| Unboxing   | Integer → int     |
+| valueOf()  | returns object    |
+| parseInt() | returns primitive |
+| ==         | compares address  |
+| equals()   | compares value    |
+
+---
+
+## 🔹 9. Important Points
+
+* Wrapper classes are objects (stored in heap)
+* Primitive values are stored in stack
+* Integer cache works only for -128 to 127
+* Always use equals() to compare values
+* Be careful with null (can cause NullPointerException during unboxing)
+
+---
+
+## 🔹 10. Simple Analogy
+
+Primitive → raw value
+Wrapper → value inside a box 📦
+
+Autoboxing → putting value into box
+Unboxing → taking value out of box
+
+---
+
+## 🎯 FINAL SUMMARY
+
+* Wrapper = object version of primitive
+* Autoboxing = automatic wrapping
+* Unboxing = automatic unwrapping
+* == checks memory
+* equals() checks value
+* Cache (-128 to 127) affects object comparison
+
+---
+
+✅ These concepts are very important for interviews and Java fundamentals
+

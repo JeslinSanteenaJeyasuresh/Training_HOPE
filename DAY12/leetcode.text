@@ -1,0 +1,72 @@
+
+390. Elimination Game:
+class Solution {
+    public int lastRemaining(int n) {
+        int head=1;
+        int step=1;
+        int remaining=n;
+        boolean lefttoright=true;
+        while(remaining>1){
+            if(lefttoright || remaining%2==1){
+                head=head+step;
+            }
+            remaining=remaining/2;
+            step=step*2;
+            lefttoright=!lefttoright;
+        }
+        return head;
+    }
+}
+
+
+455.Assign cookies
+class Solution {
+    public int findContentChildren(int[] g, int[] s){
+        Arrays.sort(g);
+        Arrays.sort(s);
+        int j=0;
+        int i=0;
+        while(i<g.length && j<s.length){
+            if(s[j]>=g[i]){
+                i++;
+            }
+            j++;
+        }
+        return i;
+    }
+}
+
+leetcode 167:
+class Solution {
+    public int[] twoSum(int[] nums, int target) {
+        int start=0;
+        int end=nums.length-1;
+        while(start<end){
+            int sum=nums[start]+nums[end];
+            if(sum==target){
+                return new int[]{start+1,end+1};
+            }
+            else if(sum<target){
+                start++;
+            }
+            else{
+                end--;
+            }
+        }
+        return new int[]{-1,-1};
+    }
+}
+
+leetcode 55.Jump game
+class Solution {
+    public boolean canJump(int[] nums) {
+        int maxreach=0;
+        for(int i=0;i<nums.length;i++){
+            if(i>maxreach){
+                return false;
+            }
+            maxreach=Math.max(maxreach,i+nums[i]);
+        }
+        return true;
+    }
+}
