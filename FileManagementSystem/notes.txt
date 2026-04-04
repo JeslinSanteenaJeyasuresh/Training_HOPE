@@ -1,0 +1,82 @@
+File Management System - Mini Project
+------------------------------------
+
+This project is a simple implementation of a File Management System using Object-Oriented Programming concepts in Java. The main idea behind this project is to simulate how files and directories are organized in a real system.
+
+In this system, files and folders are represented using classes and are arranged in a hierarchical structure (like a tree). A directory can contain multiple files and even other directories.
+
+--------------------------------------------------
+
+Concepts Used:
+
+1. Encapsulation:
+All data members such as file name, size, etc., are kept private and accessed using methods. This helps in protecting the data from direct modification.
+
+2. Inheritance:
+A base abstract class called FileSystemEntity is created, and both File and Directory classes extend it. This avoids code duplication and allows reuse of common properties like name.
+
+3. Abstraction:
+The FileSystemEntity class is abstract and contains an abstract method display(). This hides the implementation details and forces child classes to define their own display behavior.
+
+4. Polymorphism:
+The display() method behaves differently for File and Directory. Even though the method name is the same, the output changes depending on the object type.
+
+--------------------------------------------------
+
+Classes Description:
+
+1. FileSystemEntity:
+This is an abstract class that acts as a base for both File and Directory. It contains a common attribute (name) and an abstract method display().
+
+2. File:
+Represents a file. It stores file size and type. It overrides the display() method to show file details.
+
+3. Directory:
+Represents a folder. It contains a list of FileSystemEntity objects, meaning it can store both files and subdirectories. It supports adding, removing, and searching elements.
+
+4. FileSystem:
+This class acts as the main controller. It contains the root directory and is responsible for displaying the entire system.
+
+5. FileManager:
+This class handles operations like creating files, deleting them, and searching within directories.
+
+6. User:
+Represents a user interacting with the system. Currently, it simulates basic usage but can be extended further.
+
+--------------------------------------------------
+
+How the System Works:
+
+- The system starts with a root directory.
+- New directories and files can be created inside it.
+- Each directory can contain multiple files and subdirectories.
+- The display function shows the entire structure in a tree format.
+- Searching is done recursively, meaning it checks inside subfolders as well.
+
+--------------------------------------------------
+
+Extra Feature Implemented:
+
+A search functionality is added which allows finding a file or directory by name. It uses recursion to traverse through all nested directories.
+
+--------------------------------------------------
+
+Sample Output:
+
+Directory: Root
+  Directory: Documents
+    File: notes.txt (50KB, txt)
+    File: resume.pdf (120KB, pdf)
+
+--------------------------------------------------
+
+Conclusion:
+
+This project helped in understanding how Object-Oriented Programming concepts are applied in real-world scenarios. It also gave practical experience in working with hierarchical data structures and recursion.
+
+Future improvements can include:
+- Adding a user interface (menu-driven)
+- Supporting file move and copy operations
+- Adding permissions for users
+
+--------------------------------------------------
