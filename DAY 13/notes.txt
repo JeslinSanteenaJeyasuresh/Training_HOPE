@@ -1,0 +1,101 @@
+Collection:
+IS a framework of dynamic data structure to store and manipulate data efficiency
+                                                 Iterable
+                                                    |
+                                                collections
+                                        |            |           |
+                                      list         queue        set
+                        |               |              |         |          |
+                    Arraylist        linkedlist     dequeue     Hashset    Tree set
+
+to connect interface to interface use extends
+to connect class to interface use implements 
+
+ARRAY vs ARRAYLIST (Java)
+
+1. Size:
+- Array: Fixed size
+- ArrayList: Dynamic (resizable)
+
+2. Type:
+- Array: Can store primitives & objects
+- ArrayList: Stores objects only (use wrapper classes like Integer)
+
+3. Syntax:
+- Array: int[] arr = new int[5];
+- ArrayList: ArrayList<Integer> list = new ArrayList<>();
+
+4. Access:
+- Array: arr[index]
+- ArrayList: list.get(index)
+
+5. Add/Remove:
+- Array: Not easy (manual work)
+- ArrayList: Easy (add(), remove())
+
+6. Performance:
+- Array: Faster
+- ArrayList: Slightly slower (due to resizing & objects)
+
+7. Methods:
+- Array: Limited
+- ArrayList: Many built-in methods (add, remove, size, etc.)
+
+Use:
+- Array → fixed size, better performance
+- ArrayList → flexible size, easy operations
+
+ARRAYLIST RESIZING & ARRAY SIZE
+
+1. Formula:
+- newSize = old + (old / 2)
+- Used by ArrayList (not arrays)
+- Increases size by 50%
+
+Example:
+10 → 15 → 22 → 33 ...
+
+2. Array:
+- No default size
+- Must define manually
+- Example: int[] arr = new int[10];
+
+3. ArrayList:
+- Default capacity = 10
+- Grows automatically using 1.5x formula
+
+4. Key Difference:
+- Array → fixed size
+- ArrayList → dynamic resizing
+
+Array List:
+Ordered data,index based accessing,can store duplicates
+Methods:
+  arraylist=[1,2,3,4,5,6,7]
+->add()= add(10) adds 10 at the end of the arraylist
+->get()
+->remove()= arraylist.remove(7) then it removes only 7, O(n)
+->removeall()
+->set()= arraylist(1,19) in the index 1 19 is replaced
+->contains()
+->clear()
+
+ARRAY MUTABILITY
+
+1. Array is NOT immutable
+- Elements can be modified
+
+2. Limitation:
+- Size is fixed
+- Cannot add or delete elements
+
+3. Allowed:
+- arr[i] = value
+
+4. Not Allowed:
+- Increasing or decreasing size
+
+5. Key:
+- Array → fixed size, mutable elements
+
+linked list:colleections od nodes connected using refernces 
