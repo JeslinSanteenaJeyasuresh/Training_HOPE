@@ -1,0 +1,90 @@
+set interface:
+->stores only unique values and it does not allow duplicate 
+->uses hashcode() and equals()
+->set.add('A'),set.add('B')
+
+->HASHSET:
+->doesnot allow duplicated
+->stores in a random order
+methods:
+add()
+remove()
+contains()
+size()
+
+
+LINKED HASHSET:
+->doesnot allow duplicates
+->hashing for faster access
+->doubly linked list for insertion order
+->same order as added 
+
+===============================
+HASHSET CONCEPTS (JAVA NOTES)
+===============================
+
+1. HASHCODE
+-----------
+
+- hashCode() is a method that returns an integer value for an object.
+- This value is used to determine where the object will be stored in HashSet.
+
+Key Points:
+- Same objects should have the same hashCode.
+- Different objects can have the same hashCode (collision).
+- Helps in fast insertion, deletion, and searching.
+
+Example:
+String name = "Java";
+System.out.println(name.hashCode());
+
+
+2. BUCKET
+---------
+
+- A bucket is a storage location in HashSet.
+- Internally, HashSet uses a HashMap which contains an array of buckets.
+
+How it works:
+- hashCode is used to calculate the bucket index.
+
+Formula (simplified):
+bucket index = hashCode % array size
+
+Important:
+- Multiple elements can be stored in the same bucket (collision).
+- Before Java 8: Linked List is used inside a bucket.
+- After Java 8: Balanced Tree is used if collisions increase.
+
+
+3. ADDING A NEW ELEMENT IN HASHSET
+----------------------------------
+
+Example:
+HashSet<Integer> set = new HashSet<>();
+set.add(10);
+
+Step-by-step process:
+1. hashCode() is called on the element.
+2. Bucket index is calculated.
+3. HashSet goes to that bucket.
+4. equals() is used to check:
+   - If element already exists -> NOT added
+   - If element does not exist -> Added
+
+Key Rule:
+- HashSet does NOT allow duplicate elements.
+
+
+4. SUMMARY
+----------
+
+- hashCode() -> decides where to store
+- Bucket     -> actual storage location
+- equals()   -> prevents duplicates
+
+
+5. ONE LINE DEFINITION
+---------------------
+
+HashSet uses hashCode() to find the bucket and equals() to ensure no duplicates.
