@@ -1,0 +1,116 @@
+Tree Set:
+Unlike HashSet which uses Hashcode() method Tree set uses Self Balancing Tree(Red-Black Tree) internally
+output of Tree set is always Sorted 
+TREESET NOTES (JAVA)
+
+1. What is TreeSet?
+-------------------
+TreeSet is a class in java.util package that:
+- Stores only unique elements (no duplicates)
+- Maintains elements in sorted order
+- Implements NavigableSet interface
+- Internally uses a Red-Black Tree (self-balancing BST)
+
+------------------------------------------------------
+
+2. Why is TreeSet self-balancing?
+--------------------------------
+TreeSet uses a Red-Black Tree, which is a self-balancing Binary Search Tree.
+
+Problem with normal BST:
+- It can become skewed (like a linked list)
+- Time complexity becomes O(n)
+
+Red-Black Tree solution:
+- Automatically balances the tree after insertion/deletion
+- Ensures height is always balanced
+- Keeps operations at O(log n)
+
+How it balances:
+- Each node is either RED or BLACK
+- Uses rotations (left/right)
+- Uses recoloring of nodes
+
+------------------------------------------------------
+
+3. Why is TreeSet always sorted?
+-------------------------------
+Because it follows Binary Search Tree (BST) rules:
+- Left child < Parent
+- Right child > Parent
+
+Sorting is based on:
+1. Natural ordering (numbers, strings, etc.)
+2. Custom Comparator (if provided)
+
+------------------------------------------------------
+
+4. Is TreeSet output inorder traversal?
+--------------------------------------
+Yes.
+
+TreeSet internally behaves like a BST, and when iterated,
+it returns elements in INORDER traversal:
+
+Inorder Traversal:
+Left → Root → Right
+
+This always produces sorted output in a BST.
+
+------------------------------------------------------
+
+5. Example:
+-----------
+TreeSet<Integer> set = new TreeSet<>();
+
+set.add(30);
+set.add(10);
+set.add(20);
+
+System.out.println(set);
+
+Output:
+[10, 20, 30]
+
+------------------------------------------------------
+
+6. Key Points Summary:
+----------------------
+- TreeSet stores unique elements only
+- Elements are always sorted
+- Backed by Red-Black Tree
+- Self-balancing ensures O(log n)
+- Output follows inorder traversal
+
+------------------------------------------------------
+methods of TreeSet:
+set=[10,20,30,40,50]
+->set.first()=prints the smallest element of the set
+->set.last()=prints the highest element of the set
+->set.ceil(25)=30(prints next element higher than 25)
+->set.floor(25)=20(prints previous element lesser than 25)
+->set.add()
+->set.remove()
+->set.contains()
+
+TreeSet is always used to find the nearest element
+Set can store null values only one time
+
+Map Interface:stores in key-value pair
+key should alwyas be unique but value can be dupicates too
+->HashMap uses Hashcode() and equals() methods to check if a value has repeated again if so it increments the frequency
+of the value
+
+Built-in methods:
+->map.put(key,value): .put() can be used for addition and updation 
+->map.get(key) gives the value of that key
+->map.containsKey(key) : checks if the key exist or not ,returns true/false
+->map.removeKey(key)
+->map.getorDefault(key,default_value)
+example:
+  map.put(key,map.getorDefault(1,0)+1)
+->map.keySet() : used for looping through all the keys in the map
+->Map.Entry<Integer,Integer> entry:map.entrySet() inside this loop we can only use entry.getValue() ,entry.getKey() 
+we cant use entry.put(),entry.get()
+
+Linked HashSet stores the element in the order in which it was saved, not in a random order
