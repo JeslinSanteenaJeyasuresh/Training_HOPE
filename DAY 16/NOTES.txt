@@ -1,0 +1,107 @@
+Iterator:
+Traversing collection element by element through cursor without any concurrent modification exception
+
+methods:
+i) hasNext()->checks next element exist or not
+ii).next()->moves cursor to next element
+iii)remove()->removes the element
+
+Iterator interface is inside the collection
+Inside Iterator there is cursor and inside cursor there is the element
+when we create a Iterator a cursor is also created and the cursor is placed before the first element
+
+
+# JAVA ITERATOR NOTES
+
+1. Iterator (java.util.Iterator)
+
+---
+
+* Used to traverse collections (List, Set, etc.)
+* Traversal direction: FORWARD ONLY (Not bidirectional)
+
+Methods:
+
+* hasNext()
+* next()
+* remove()
+
+Limitations:
+
+* Cannot move backward
+* Cannot add or update elements
+
+Example:
+Iterator<Integer> it = list.iterator();
+while(it.hasNext()) {
+System.out.println(it.next());
+}
+
+Conclusion:
+Iterator is NOT bidirectional.
+
+2. ListIterator (java.util.ListIterator)
+
+---
+
+* Used only with List (ArrayList, LinkedList)
+* Traversal direction: FORWARD + BACKWARD (Bidirectional)
+
+Methods:
+Forward:
+
+* hasNext()
+* next()
+
+Backward:
+
+* hasPrevious()
+* previous()
+
+Modification:
+
+* add()
+* set()
+* remove()
+
+Example:
+ListIterator<Integer> lit = list.listIterator();
+
+// Forward
+while(lit.hasNext()) {
+System.out.println(lit.next());
+}
+
+// Backward
+while(lit.hasPrevious()) {
+System.out.println(lit.previous());
+}
+
+Conclusion:
+ListIterator IS bidirectional.
+
+3. Difference Table
+
+---
+
+## Feature            Iterator        ListIterator
+
+Direction          Forward only    Forward + Backward
+Works on           All collections List only
+Add elements       No              Yes
+Replace elements   No              Yes
+Remove elements    Yes             Yes
+
+## FINAL SUMMARY
+
+* Iterator → Not bidirectional
+* ListIterator → Bidirectional
+
+
+                                                       ##Comparable Iterator:
+->natural ordering-deafult way of sorting 
+-> compareTo() method is not defined inside the interface(Interface is 100% abstraction hence any method inside it is not defined )
+                                                    
+                                                       ##Comparator:(external to the main class)
+->creating custom sorting logic externally
+->compare() method
