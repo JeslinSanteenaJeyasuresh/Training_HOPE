@@ -1,0 +1,83 @@
+class Solution {
+    public int minimumDistance(int[] nums) {
+        Map<Integer,List<Integer>> map=new HashMap<>();
+        for(int i=0;i<nums.length;i++){
+            map.computeIfAbsent(nums[i],k->new ArrayList<>()).add(i);
+        }
+        int min=Integer.MAX_VALUE;
+        for(Map.Entry<Integer,List<Integer>> entry:map.entrySet()){
+            List<Integer> lst=entry.getValue();
+            for(int i=0;i+2<lst.size();i++){
+                int a=lst.get(i);
+                int b=lst.get(i+2);
+                int dist= 2*(b-a);
+                min=Math.min(min,dist);
+            }
+        }
+        return min==Integer.MAX_VALUE ? -1:min;
+    }
+}
+
+
+class Solution {
+    public int mostFrequentEven(int[] nums) {
+        Map<Integer,Integer> map=new HashMap<>();
+        for(int val:nums){
+            if(val%2==0){
+                map.put(val,map.getOrDefault(val,0)+1);
+            }
+        }
+        int maxfreq=0;
+        int ans=-1;
+        for(Map.Entry<Integer,Integer> entry:map.entrySet()){
+            int key=entry.getKey();
+            int value=entry.getValue();
+            if(value>maxfreq){
+                maxfreq=value;
+                ans=key;
+            }
+            else if((value==maxfreq)&&(key<ans)){
+                ans=key;
+            }
+
+        }
+        return ans;
+    }
+}
+
+leetcode 560:
+class Solution {
+    public int subarraySum(int[] nums, int k) {
+        int c=0;
+        for(int i=0;i<nums.length;i++){
+            int sum=0;
+            for(int j=i;j<nums.length;j++){
+                sum+=nums[j];
+                if(sum==k)c++;
+            }
+        }
+        return c;
+    }
+}
+
+leetcode 374:
+class Solution {
+    public int[] topKFrequent(int[] nums, int k) {
+        Map<Integer,Integer> map=new HashMap<>();
+        for(int i:nums){
+            map.put(i,map.getOrDefault(i,0)+1);
+        }
+        List<Integer> lst=new ArrayList<>(map.keySet());
+        Comparator<Integer> cmp=new Comparator<Integer>(){
+            public int compare(Integer a,Integer b){
+                return Integer.compare(map.get(b),map.get(a));
+            }
+        };
+        lst.sort(cmp);
+        int[] r=new int[k];
+        for(int i=0;i<k;i++){
+            r[i]=lst.get(i);
+        }
+        return r;
+    }
+}
