@@ -1,0 +1,36 @@
+File handling:
+->to store data permanently for later
+->to use data between different systems
+methods:
+open
+create
+read
+write
+close
+
+1.Byte stream:
+used for audio,video,images
+2.Charavter stream:
+text file,character
+
+FileWriter & BufferedWriter:
+BufferedWritter is faster than FileWriter bexcause,
+In BUfferedWritter the written content are first stored in RAM/Buffer only if we close(Write.close()) or the storage 
+in the BUffer is full the content is pushed in the file, so the writing process is done only once, it is not done 
+everytime when we write content to it
+
+    ->“BufferedWriter is faster than FileWriter because it reduces the number of disk I/O operations by storing data 
+      temporarily in a buffer and writing it in larger chunks instead of writing every time.”
+
+File reader:
+->.read() method
+returns ASCII value and returns -1 if reached the end of the file
+
+
+| Feature     | FileReader             | BufferedReader         |
+| ----------- | ---------------------- | ---------------------- |
+| Speed       | ❌ Slow                 | ✅ Fast                 |
+| Buffer      | ❌ No                   | ✅ Yes                  |
+| Read type   | Character-by-character | Line / block           |
+| Disk access | Frequent               | Reduced                |
+| Methods     | `read()`               | `read()`, `readLine()` |
