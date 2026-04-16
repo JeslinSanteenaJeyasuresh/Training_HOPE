@@ -1,0 +1,10 @@
+Serialization:
+the process in which objects are converted into Byte stream and then it is stored in file/database to maintain
+the state of the object
+Usually,Objects exist only in memory (RAM)..Memory gets cleared when program ends,if you want to:
+
+Save object state to a file
+Send object over network
+Store in database
+                       
+Serialization is platform independnet 
