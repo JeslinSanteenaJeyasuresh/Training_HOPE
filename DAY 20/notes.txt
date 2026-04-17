@@ -1,0 +1,47 @@
+Single Threading:
+runs step by step exectes one task at a time
+->takes long time
+->it waits for that task to complete
+Multi-threading:
+->runs multiple parts of the program in the same time
+
+concurrency:Switching between tasks by one CPU
+parallelism:multiple task at the same time
+
+process:
+->program currently running
+->doesnot share data
+->if multiple process is craeted CPU usage is heavy
+
+Thread:
+->data can be shared
+->smallest unit of preocess that performs tasks
+->thread always belongs to process
+->multiple threads can exist inside one process
+
+Thread implementation:
+
+method 1: Using Thread class, a class extends Thread class but, when a class already acts as a child class it cant
+extend the thread  class as , Java doesnot support Multiple inheritance during that we use Runnable interface
+
+method 2:Using Runnable interface, a class implements Runnable interface
+
+If we call run() method using 
+1.By calling the run() it will simply act as a normal function
+2.If we call using start() ,it inializes thread and calls run() 
+
+
+run() → normal method call, same thread
+start() → creates a new thread, then calls run() inside it
+
+Lifecycle of thread:
+new -> Runnable -> Running -> Terminated
+
+Runnable-> waiting in the queue for cpu allocation
+Running->thread being executed in the CPU
+wait/block using sleep() and wait()
+
+---------------------------------------------------Thread Synchronization:-------------------------------------------
+Shared resource is data used by multiple threads,variables,objects,file
+Race condition:
+when multiple thread access one common shared resource work based on execution order
