@@ -1,0 +1,21 @@
+functional programming:
+
+LAMBDA FUNCTION/ANONYMOUS FUNCTION:
+(parameter)->{body}
+It always works with functional interface-(interface with one method) 
+Lambda function is mostly used in backend developement
+
+built-in functional interface:
+1.Predicate:
+ An interface that takes something and returns True or false
+ Predicate<T>-object datastype
+
+ <T>-data
+ <K>-key
+ <V>-value
+ -> predicate has a test() method which returns true/false
+
+2.Consumer:
+An interface which takes input and do something with it and return nothing
+input->action->return nothing
+ex: print numbers,upadtye value
